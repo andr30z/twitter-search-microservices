@@ -1,0 +1,69 @@
+2022-04-19 11:42:47 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.14.1 on andre-Aspire-A515-41G with PID 2693 (/home/andre/Documents/GitHub/microservices-demo/twitter-to-kafka-service/target/classes started by andre in /home/andre/Documents/GitHub/microservices-demo)
+2022-04-19 11:42:47 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-19 11:42:49 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 3.601 seconds (JVM running for 7.259)
+2022-04-19 11:42:49 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts
+2022-04-19 11:42:49 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - []
+2022-04-19 11:44:19 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.14.1 on andre-Aspire-A515-41G with PID 2769 (/home/andre/Documents/GitHub/microservices-demo/twitter-to-kafka-service/target/classes started by andre in /home/andre/Documents/GitHub/microservices-demo)
+2022-04-19 11:44:19 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-19 11:44:20 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 2.463 seconds (JVM running for 4.585)
+2022-04-19 11:44:20 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts
+2022-04-19 11:44:20 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - []
+2022-04-19 11:45:23 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.14.1 on andre-Aspire-A515-41G with PID 2847 (/home/andre/Documents/GitHub/microservices-demo/twitter-to-kafka-service/target/classes started by andre in /home/andre/Documents/GitHub/microservices-demo)
+2022-04-19 11:45:23 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-19 11:45:24 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 2.596 seconds (JVM running for 5.807)
+2022-04-19 11:45:24 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts
+2022-04-19 11:45:24 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, ElasticSearch]
+2022-04-19 11:49:26 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.14.1 on andre-Aspire-A515-41G with PID 2936 (/home/andre/Documents/GitHub/microservices-demo/twitter-to-kafka-service/target/classes started by andre in /home/andre/Documents/GitHub/microservices-demo)
+2022-04-19 11:49:26 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-19 11:49:27 [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceConfigData' defined in file [/home/andre/Documents/GitHub/microservices-demo/twitter-to-kafka-service/target/classes/com/microservices/demo/twitter/to/kafka/service/config/TwitterToKafkaServiceConfigData.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.lang.String' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2022-04-19 11:49:27 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-04-19 11:49:27 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.microservices.demo.twitter.to.kafka.service.config.TwitterToKafkaServiceConfigData required a bean of type 'java.lang.String' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'java.lang.String' in your configuration.
+
+2022-04-19 11:50:21 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.14.1 on andre-Aspire-A515-41G with PID 3009 (/home/andre/Documents/GitHub/microservices-demo/twitter-to-kafka-service/target/classes started by andre in /home/andre/Documents/GitHub/microservices-demo)
+2022-04-19 11:50:21 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-19 11:50:22 [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceConfigData' defined in file [/home/andre/Documents/GitHub/microservices-demo/twitter-to-kafka-service/target/classes/com/microservices/demo/twitter/to/kafka/service/config/TwitterToKafkaServiceConfigData.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.lang.String' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2022-04-19 11:50:22 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-04-19 11:50:22 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.microservices.demo.twitter.to.kafka.service.config.TwitterToKafkaServiceConfigData required a bean of type 'java.lang.String' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'java.lang.String' in your configuration.
+
+2022-04-19 11:51:12 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.14.1 on andre-Aspire-A515-41G with PID 3085 (/home/andre/Documents/GitHub/microservices-demo/twitter-to-kafka-service/target/classes started by andre in /home/andre/Documents/GitHub/microservices-demo)
+2022-04-19 11:51:12 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-19 11:51:13 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 2.101 seconds (JVM running for 3.937)
+2022-04-19 11:51:13 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts
+2022-04-19 11:51:13 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, ElasticSearch]
+2022-04-19 11:51:13 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Welcome My Nigga
+2022-04-19 12:00:01 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.14.1 on andre-Aspire-A515-41G with PID 3222 (/home/andre/Documents/GitHub/microservices-demo/twitter-to-kafka-service/target/classes started by andre in /home/andre/Documents/GitHub/microservices-demo)
+2022-04-19 12:00:01 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-19 12:00:02 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 2.518 seconds (JVM running for 4.45)
+2022-04-19 12:00:02 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts
+2022-04-19 12:00:02 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, ElasticSearch]
+2022-04-19 12:00:02 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Hello World
