@@ -9,7 +9,6 @@ import twitter4j.FilterQuery;
 import twitter4j.TwitterException;
 import twitter4j.TwitterStream;
 import twitter4j.TwitterStreamFactory;
-import twitter4j.conf.ConfigurationBuilder;
 
 import javax.annotation.PreDestroy;
 import java.util.Arrays;
@@ -30,13 +29,7 @@ public class TwitterStreamRunnerImpl implements TwitterStreamRunner {
 
     @Override
     public void start() throws TwitterException {
-        ConfigurationBuilder cb = new ConfigurationBuilder();
-        cb.setDebugEnabled(true)
-                .setOAuthConsumerKey("UaPxDWrNXQJRtxDBGjKrqmIcd")
-                .setOAuthConsumerSecret("wsB8t9m4MT7VXs2UK4YaIV8tA02acDwHAfREyZuFdQo25UYle6")
-                .setOAuthAccessToken("1181602748980236289")
-                .setOAuthAccessTokenSecret("Y9BCvb1AhiPI8QdDKUyglXJD6tQ2eHgkehf1PixdGz0LR");
-        var twitterStreamFactory = new TwitterStreamFactory(cb.build());
+        var twitterStreamFactory = new TwitterStreamFactory();
         twitterStream = twitterStreamFactory.getInstance();
         twitterStream.addListener(twitterKafkaStatusListener);
         addFilter();

@@ -12,7 +12,8 @@ import org.springframework.context.annotation.ComponentScan;
 import java.util.Arrays;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.microservices.demo")
+@ComponentScan(basePackages = "com.microservices.demo"
+)
 public class TwitterToKafkaServiceApplication implements CommandLineRunner {
     private final TwitterToKafkaServiceConfigData twitterToKafkaServiceConfigData;
     private final TwitterStreamRunner twitterStreamRunner;
