@@ -1,6 +1,7 @@
 package com.microservices.demo.twitter.to.kafka.service;
 
-import com.microservices.demo.config.TwitterToKafkaServiceConfigData;
+import com.microservices.demo.twitter.to.kafka.service.init.KafkaStreamInitializerImpl;
+import com.microservices.demo.twitter.to.kafka.service.init.StreamInitializer;
 import com.microservices.demo.twitter.to.kafka.service.runner.TwitterStreamRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,17 +16,17 @@ import java.util.Arrays;
 @ComponentScan(basePackages = "com.microservices.demo"
 )
 public class TwitterToKafkaServiceApplication implements CommandLineRunner {
-    private final TwitterToKafkaServiceConfigData twitterToKafkaServiceConfigData;
-    private final TwitterStreamRunner twitterStreamRunner;
     private static final Logger LOG = LoggerFactory.getLogger(TwitterToKafkaServiceApplication.class);
+    private final TwitterStreamRunner twitterStreamRunner;
+    private final StreamInitializer streamInitializer;
 
-    public TwitterToKafkaServiceApplication(
-            TwitterToKafkaServiceConfigData twitterToKafkaServiceConfigData,
-            TwitterStreamRunner twitterStreamRunner
-    ) {
+    public TwitterToKafkaServiceApplication(TwitterStreamRunner twitterStreamRunner,
+                                            StreamInitializer streamInitializer) {
         this.twitterStreamRunner = twitterStreamRunner;
-        this.twitterToKafkaServiceConfigData = twitterToKafkaServiceConfigData;
+        this.streamInitializer = streamInitializer;
     }
+
+
 
     public static void main(String[] args) {
         SpringApplication.run(TwitterToKafkaServiceApplication.class, args);
@@ -34,13 +35,7 @@ public class TwitterToKafkaServiceApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         LOG.info("App starts");
-//        LOG.info(twitterStreamRunner.toString()+"TWITTER");
-        LOG.info(twitterToKafkaServiceConfigData.toString());
-        LOG.info(Arrays.toString(
-                twitterToKafkaServiceConfigData
-                        .getTwitterKeywords()
-                        .toArray(new String[0])));
-        LOG.info(twitterToKafkaServiceConfigData.getWelcomeMessage());
+        streamInitializer.init();
         twitterStreamRunner.start();
     }
 }
