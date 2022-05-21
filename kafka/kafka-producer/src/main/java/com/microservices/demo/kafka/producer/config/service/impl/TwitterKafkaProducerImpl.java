@@ -16,7 +16,7 @@ import javax.annotation.PreDestroy;
 @Service
 public class TwitterKafkaProducerImpl implements KafkaProducer<Long, TwitterAvroModel> {
     private static final Logger LOGGER = LoggerFactory.getLogger(TwitterKafkaProducerImpl.class);
-    private KafkaTemplate<Long, TwitterAvroModel> kafkaTemplate;
+    private final KafkaTemplate<Long, TwitterAvroModel> kafkaTemplate;
 
     public TwitterKafkaProducerImpl(KafkaTemplate<Long, TwitterAvroModel> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
