@@ -1,0 +1,429 @@
+2022-05-21 01:08:17 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication v0.0.1-SNAPSHOT using Java 11.0.15 on 4f4fad620d0a with PID 1 (/workspace/BOOT-INF/classes started by cnb in /workspace)
+2022-05-21 01:08:17 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-05-21 01:08:18 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2022-05-21 01:08:18 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.0.1
+2022-05-21 01:08:18 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 8e30984f43e64d8b
+2022-05-21 01:08:18 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1653095298646
+2022-05-21 01:08:19 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080
+2022-05-21 01:08:19 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 3.261 seconds (JVM running for 3.942)
+2022-05-21 01:08:19 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts
+2022-05-21 01:08:19 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Creating 1 topic(s), attempt 0.
+2022-05-21 01:08:19 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
+2022-05-21 01:08:20 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.5:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:21 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.6:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:21 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.4:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:21 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.5:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:21 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.6:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:21 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.4:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:22 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.5:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:22 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.6:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:22 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.4:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:22 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.6:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:22 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.4:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:22 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.5:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:22 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.4:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:22 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.6:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:22 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.5:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:23 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.4:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:23 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.5:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:23 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.6:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:24 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.4:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:24 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.5:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:24 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.6:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:25 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.4:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:25 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.5:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:25 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.6:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:26 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (kafka-broker-3/172.18.0.4:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:26 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (kafka-broker-1/172.18.0.5:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:27 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (kafka-broker-2/172.18.0.6:9092) could not be established. Broker may not be available.
+2022-05-21 01:08:29 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Topic with name twitter-topic.
+2022-05-21 01:08:29 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Topic with name _schemas.
+2022-05-21 01:08:29 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Topic with name __confluent.support.metrics.
+2022-05-21 01:08:29 [main] INFO  c.m.d.t.t.k.s.i.KafkaStreamInitializerImpl - Topic with name twitter-topic is ready for operations!
+2022-05-21 01:08:29 [main] INFO  c.m.d.t.t.k.s.r.i.TwitterStreamRunnerImpl - Started filtering twitter stream for keywords [Java, Microservices, Kafka, Elasticsearch]
+2022-05-21 01:08:29 [Twitter Stream consumer /  [1][initializing]] INFO  twitter4j.TwitterStreamImpl - Establishing connection.
+2022-05-21 01:08:35 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Connection established.
+2022-05-21 01:08:35 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Receiving status stream.
+2022-05-21 01:08:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @MATe_RIYA_NFT: ???#CNP ???? #Giveaway?
+
+????????????CNP???????????????? #CryptoNinja ????????
+
+?1?????????
+Narukami-Java sparrow #06630? sending to kafka topic twitter-topic
+2022-05-21 01:08:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1360883258905358339, "id": 1527818586269528069, "text": "RT @MATe_RIYA_NFT: ???#CNP ???? #Giveaway?\n\n??????????\u203C?CNP???????????????? #CryptoNinja ????????\n\n?1?????????\nNarukami-Java sparrow #06630\u2026", "createdAt": 1653095311000}' to topic='twitter-topic'
+2022-05-21 01:08:47 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @FlorSaucedo13: C?mo amo a los escritores que odian ir a laburar. Militante de Kafka y Pessoa por siempre. sending to kafka topic twitter-topic
+2022-05-21 01:08:47 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 71263971, "id": 1527818636487970818, "text": "RT @FlorSaucedo13: C?mo amo a los escritores que odian ir a laburar. Militante de Kafka y Pessoa por siempre.", "createdAt": 1653095323000}' to topic='twitter-topic'
+2022-05-21 01:08:47 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @dozle_official: ??????????????????16????5/21(?)??????????
+
+??????????????????
+?????????Java????
+https://t.co/TnZoZK2gaU
+
+???????????
+ht? sending to kafka topic twitter-topic
+2022-05-21 01:08:47 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 875879299038846976, "id": 1527818637121552385, "text": "RT @dozle_official: ??????????????????16????5/21(?)??????????\n\n???????????????\u200D??\n????????\u203BJava????\nhttps://t.co/TnZoZK2gaU\n\n???????????\nht\u2026", "createdAt": 1653095323000}' to topic='twitter-topic'
+2022-05-21 01:08:47 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Having essays and,,.. assignments needing your urgent attention? We'll help you out. Class is kicking ass..
+essay due......
+maths.
+sociology 
+java script
+anatomy..
+accountings...
+powerpoint,...
+essay pay  .
+algebra....
+literature....
+history.....
+geometry
+chemistry. sending to kafka topic twitter-topic
+2022-05-21 01:08:47 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1452241874899685386, "id": 1527818637188415489, "text": "Having essays and,,.. assignments needing your urgent attention? We'll help you out. Class is kicking ass..\nessay due......\nmaths.\nsociology \njava script\nanatomy..\naccountings...\npowerpoint,...\nessay pay  .\nalgebra....\nliterature....\nhistory.....\ngeometry\nchemistry.", "createdAt": 1653095323000}' to topic='twitter-topic'
+2022-05-21 01:08:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @culturaliteral1: ?Supongo que me encantan mis cicatrices porque se han quedado conmigo m?s tiempo que la mayor?a de la gente.?? sending to kafka topic twitter-topic
+2022-05-21 01:08:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1274516795286867973, "id": 1527818648353705987, "text": "RT @culturaliteral1: \u201CSupongo que me encantan mis cicatrices porque se han quedado conmigo m?s tiempo que la mayor?a de la gente.\u201D\u2026", "createdAt": 1653095325000}' to topic='twitter-topic'
+2022-05-21 01:08:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text ???? 
+So excited! Amazing work! Thank you, your team and the community at large.
+
+I know it?s still a preview release but it?s just great seeing things materialize (APIs more & more stable)!
+
+#OpenJDK #Java #Panama https://t.co/rzq0JMbzV0 sending to kafka topic twitter-topic
+2022-05-21 01:08:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 18337218, "id": 1527818656436076544, "text": "???? \nSo excited! Amazing work! Thank you, your team and the community at large.\n\nI know it\u2019s still a preview release but it\u2019s just great seeing things materialize (APIs more & more stable)!\n\n#OpenJDK #Java #Panama https://t.co/rzq0JMbzV0", "createdAt": 1653095327000}' to topic='twitter-topic'
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Java???????????? sending to kafka topic twitter-topic
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1322186640, "id": 1527818668754628609, "text": "Java????????????", "createdAt": 1653095330000}' to topic='twitter-topic'
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @zobjobsGB: Java/Python Developer- Top-Tier Global Hedge Fund
+at Oxford Knight
+Salary c?120140k base circa ?200k TC 410 years experience? sending to kafka topic twitter-topic
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1398866593237508100, "id": 1527818669925060609, "text": "RT @zobjobsGB: Java/Python Developer- Top-Tier Global Hedge Fund\nat Oxford Knight\nSalary c?120140k base circa ?200k TC 410 years experience\u2026", "createdAt": 1653095331000}' to topic='twitter-topic'
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @callowaymiles7: Grade A+ assured in any timed paper
+#Essay due
+#Pay write
+#javascript
+#Online class take
+#Philosophy 
+#Chemistry
+Litera? sending to kafka topic twitter-topic
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1398866593237508100, "id": 1527818670029799424, "text": "RT @callowaymiles7: Grade A+ assured in any timed paper\n#Essay due\n#Pay write\n#javascript\n#Online class take\n#Philosophy \n#Chemistry\nLitera\u2026", "createdAt": 1653095331000}' to topic='twitter-topic'
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @ShadyWordPress: @KIIARA Twitter Without Me #trendingkiiara @KIIARA #Roblox #buildinginpublic #Security #Python #BigData #AI #IoT #IIoT? sending to kafka topic twitter-topic
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1398866593237508100, "id": 1527818669962715136, "text": "RT @ShadyWordPress: @KIIARA Twitter Without Me #trendingkiiara @KIIARA #Roblox #buildinginpublic #Security #Python #BigData #AI #IoT #IIoT\u2026", "createdAt": 1653095331000}' to topic='twitter-topic'
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @Mobile_Morgue: @kingblitzmusic @HeroinVerbal ? Always Broken After 45 Minutes 
+#Python #Roblox #IoT #IIoT #Azure #PyTorch #Cython #RSta? sending to kafka topic twitter-topic
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1398866593237508100, "id": 1527818670025613312, "text": "RT @Mobile_Morgue: @kingblitzmusic @HeroinVerbal ? Always Broken After 45 Minutes \n#Python #Roblox #IoT #IIoT #Azure #PyTorch #Cython #RSta\u2026", "createdAt": 1653095331000}' to topic='twitter-topic'
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @kariss_james: Uniquement en main propre???
+snap: jameshop200
+telegram: critoma
+#100Devs #100daysofcodechallenge #100DaysOfCode #bigdata? sending to kafka topic twitter-topic
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1398866593237508100, "id": 1527818669958516737, "text": "RT @kariss_james: Uniquement en main propre???\nsnap: jameshop200\ntelegram: critoma\n#100Devs #100daysofcodechallenge #100DaysOfCode #bigdata\u2026", "createdAt": 1653095331000}' to topic='twitter-topic'
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @DigiDeals_tech: Deep Dive into Lowering Server Power Consumption - ServeTheHome
+
+ Readmore ? https://t.co/EdhRw0ax3q
+
+#programming #jav? sending to kafka topic twitter-topic
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1398866593237508100, "id": 1527818670109433856, "text": "RT @DigiDeals_tech: Deep Dive into Lowering Server Power Consumption - ServeTheHome\n\n Readmore ? https://t.co/EdhRw0ax3q\n\n#programming #jav\u2026", "createdAt": 1653095331000}' to topic='twitter-topic'
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @writershub_101: Pay an academic expert to help you write your 
+#Essay
+#Assignment
+#Homework 
+#Project
+#Dissertation
+#Thesis
+#Javascript? sending to kafka topic twitter-topic
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1398866593237508100, "id": 1527818669979492354, "text": "RT @writershub_101: Pay an academic expert to help you write your \n#Essay\n#Assignment\n#Homework \n#Project\n#Dissertation\n#Thesis\n#Javascript\u2026", "createdAt": 1653095331000}' to topic='twitter-topic'
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @PDH_SciTechNews: #Coding Nucamp Launches Unique Coding Education for Businesses to Quickly and Non-Disruptively Upskill Existing Workfo? sending to kafka topic twitter-topic
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1398866593237508100, "id": 1527818669971148800, "text": "RT @PDH_SciTechNews: #Coding Nucamp Launches Unique Coding Education for Businesses to Quickly and Non-Disruptively Upskill Existing Workfo\u2026", "createdAt": 1653095331000}' to topic='twitter-topic'
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @kariss_james: ??
+Snap: jameshop200
+T?l?gram : critoma
+#paris #citation #saintdenis #Python #Java #JavaScript  #ReactJS #Serverless #IoT? sending to kafka topic twitter-topic
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1398866593237508100, "id": 1527818669987880961, "text": "RT @kariss_james: ??\nSnap: jameshop200\nT?l?gram : critoma\n#paris #citation #saintdenis #Python #Java #JavaScript  #ReactJS #Serverless #IoT\u2026", "createdAt": 1653095331000}' to topic='twitter-topic'
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @Mobile_Morgue: ? If They Could' They Would
+#Python #Roblox #IoT #IIoT #Azure #PyTorch #Cython #RStats #DotNet #CPP #Java #DeFi #ADA #CS? sending to kafka topic twitter-topic
+2022-05-21 01:08:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1398866593237508100, "id": 1527818669979582465, "text": "RT @Mobile_Morgue: ? If They Could' They Would\n#Python #Roblox #IoT #IIoT #Azure #PyTorch #Cython #RStats #DotNet #CPP #Java #DeFi #ADA #CS\u2026", "createdAt": 1653095331000}' to topic='twitter-topic'
+2022-05-21 01:08:56 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @dozle_official: ??????????????????16????5/21(?)??????????
+
+??????????????????
+?????????Java????
+https://t.co/TnZoZK2gaU
+
+???????????
+ht? sending to kafka topic twitter-topic
+2022-05-21 01:08:56 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1378690692822622209, "id": 1527818673473622016, "text": "RT @dozle_official: ??????????????????16????5/21(?)??????????\n\n???????????????\u200D??\n????????\u203BJava????\nhttps://t.co/TnZoZK2gaU\n\n???????????\nht\u2026", "createdAt": 1653095331000}' to topic='twitter-topic'
+2022-05-21 01:08:56 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text ??????????Java????????????????????????????????? sending to kafka topic twitter-topic
+2022-05-21 01:08:56 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1261592915240878080, "id": 1527818675763306497, "text": "??????????Java?????????????????????????????????", "createdAt": 1653095332000}' to topic='twitter-topic'
+2022-05-21 01:09:00 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @carldea: ???? 
+So excited! Amazing work! Thank you, your team and the community at large.
+
+I know it?s still a preview release but it?s? sending to kafka topic twitter-topic
+2022-05-21 01:09:00 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1423655520196435969, "id": 1527818689298452481, "text": "RT @carldea: ???? \nSo excited! Amazing work! Thank you, your team and the community at large.\n\nI know it\u2019s still a preview release but it\u2019s\u2026", "createdAt": 1653095335000}' to topic='twitter-topic'
+2022-05-21 01:09:05 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @brunocroh: Elon musk parece aqueles dev senior gordinho que trabalha com Java/.NET ??
+
+Cc @sseraphini https://t.co/y2BgANJcXN sending to kafka topic twitter-topic
+2022-05-21 01:09:05 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 329265724, "id": 1527818712086085639, "text": "RT @brunocroh: Elon musk parece aqueles dev senior gordinho que trabalha com Java/.NET ??\n\nCc @sseraphini https://t.co/y2BgANJcXN", "createdAt": 1653095341000}' to topic='twitter-topic'
+2022-05-21 01:09:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text ??????:26??(?????????)
+
+??Switch??????????? ?
+???:???
+
+??:?5,430?
+????????(10:09)
+
+https://t.co/qODqdYFDIY sending to kafka topic twitter-topic
+2022-05-21 01:09:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1358806251077922816, "id": 1527818715852677123, "text": "??????:26??(?????????)\n\n??Switch??????????? ?\n???:???\n\n??:?5,430?\n????????(10:09)\n\nhttps://t.co/qODqdYFDIY", "createdAt": 1653095342000}' to topic='twitter-topic'
+2022-05-21 01:09:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text ???????6??(????????UPS?)
+
+???????? YETI 200X 120V power station 22070?
+???:Goal Zero
+
+??:?38,270?
+????????(10:09)
+
+https://t.co/t0V3mf3Tf3 sending to kafka topic twitter-topic
+2022-05-21 01:09:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1375961552122044417, "id": 1527818717601619968, "text": "???????6??(????????UPS?)\n\n???????? YETI 200X 120V power station 22070?\n???:Goal Zero\n\n??:?38,270?\n????????(10:09)\n\nhttps://t.co/t0V3mf3Tf3", "createdAt": 1653095342000}' to topic='twitter-topic'
+2022-05-21 01:09:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text ?Ki sen bu isen,
+?z?r dilerim.
+Bilmeden sevdim...?
+
+Franz Kafka sending to kafka topic twitter-topic
+2022-05-21 01:09:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1339678733402316802, "id": 1527818724602003457, "text": "\u201CKi sen bu isen,\n?z?r dilerim.\nBilmeden sevdim...\u201D\n\nFranz Kafka", "createdAt": 1653095344000}' to topic='twitter-topic'
+2022-05-21 01:09:17 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text @squizxy 2 weeks ago after reading the Trial by Franz Kafka. sending to kafka topic twitter-topic
+2022-05-21 01:09:17 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1136067457, "id": 1527818760345702400, "text": "@squizxy 2 weeks ago after reading the Trial by Franz Kafka.", "createdAt": 1653095352000}' to topic='twitter-topic'
+2022-05-21 01:09:19 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @errorf0k: Microsoft .NET Framework 4.8 instalador desatendido (32/64bits) https://t.co/77yGHkTiFS ?? #VisualBasic #Delphi #Pascal #Perl? sending to kafka topic twitter-topic
+2022-05-21 01:09:19 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1518606807672836101, "id": 1527818771926495232, "text": "RT @errorf0k: Microsoft .NET Framework 4.8 instalador desatendido (32/64bits) https://t.co/77yGHkTiFS ?? #VisualBasic #Delphi #Pascal #Perl\u2026", "createdAt": 1653095355000}' to topic='twitter-topic'
+2022-05-21 01:09:21 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text java????????????????? new?????????????? https://t.co/mzFZAKie7F #java #new?????????????? sending to kafka topic twitter-topic
+2022-05-21 01:09:21 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 803116604577878017, "id": 1527818777274236928, "text": "java????????????????? new?????????????? https://t.co/mzFZAKie7F #java #new??????????????", "createdAt": 1653095356000}' to topic='twitter-topic'
+2022-05-21 01:09:32 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @vminiecats: ? As? es, Butterfly es una obra de arte.  La letra de Namjoon de "Kafka en la orilla (libro)" fue realmente?
+? Si lo escuch? sending to kafka topic twitter-topic
+2022-05-21 01:09:32 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1083123798637989889, "id": 1527818823763738628, "text": "RT @vminiecats: ? As? es, Butterfly es una obra de arte.  La letra de Namjoon de \"Kafka en la orilla (libro)\" fue realmente\u2026\n? Si lo escuch\u2026", "createdAt": 1653095367000}' to topic='twitter-topic'
+2022-05-21 01:09:33 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text The Complete Java Game Development Course 2022: Part 2 - https://t.co/aSpG676vfH #udemycoupon #onlineclasses #onlinecourses https://t.co/IVZ7qpjcyQ sending to kafka topic twitter-topic
+2022-05-21 01:09:33 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 2238857695, "id": 1527818827903471617, "text": "The Complete Java Game Development Course 2022: Part 2 - https://t.co/aSpG676vfH #udemycoupon #onlineclasses #onlinecourses https://t.co/IVZ7qpjcyQ", "createdAt": 1653095368000}' to topic='twitter-topic'
+2022-05-21 01:09:44 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Senior Java Developer - McLean, VA https://t.co/m9uCOq27lE sending to kafka topic twitter-topic
+2022-05-21 01:09:44 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 972021086, "id": 1527818875282268161, "text": "Senior Java Developer - McLean, VA https://t.co/m9uCOq27lE", "createdAt": 1653095380000}' to topic='twitter-topic'
+2022-05-21 01:09:45 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @gp_pulipaka: The Six #Python #MachineLearning Tools You Should Know. @kdnuggets #BigData #Analytics #DataScience #AI #IoT #IIoT #RStats? sending to kafka topic twitter-topic
+2022-05-21 01:09:45 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1268500317500391426, "id": 1527818879627583488, "text": "RT @gp_pulipaka: The Six #Python #MachineLearning Tools You Should Know. @kdnuggets #BigData #Analytics #DataScience #AI #IoT #IIoT #RStats\u2026", "createdAt": 1653095381000}' to topic='twitter-topic'
+2022-05-21 01:09:49 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @questworksnet: @itengr_matome ????=Java
+??=JavaScript sending to kafka topic twitter-topic
+2022-05-21 01:09:49 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1243221058678714369, "id": 1527818896694452224, "text": "RT @questworksnet: @itengr_matome ????=Java\n??=JavaScript", "createdAt": 1653095385000}' to topic='twitter-topic'
+2022-05-21 01:09:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @gp_pulipaka: The Six #Python #MachineLearning Tools You Should Know. @kdnuggets #BigData #Analytics #DataScience #AI #IoT #IIoT #RStats? sending to kafka topic twitter-topic
+2022-05-21 01:09:50 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1511954357138636800, "id": 1527818899596640257, "text": "RT @gp_pulipaka: The Six #Python #MachineLearning Tools You Should Know. @kdnuggets #BigData #Analytics #DataScience #AI #IoT #IIoT #RStats\u2026", "createdAt": 1653095385000}' to topic='twitter-topic'
+2022-05-21 01:09:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text @xcesarmaya Gracias java! sending to kafka topic twitter-topic
+2022-05-21 01:09:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 76335520, "id": 1527818911034621952, "text": "@xcesarmaya Gracias java!", "createdAt": 1653095388000}' to topic='twitter-topic'
+2022-05-21 01:09:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @Sheraj99: Data Visualization of Single Cell-Identity. #BigData #Analytics #DataScience #AI #MachineLearning #IoT #IIoT #Python #RStats? sending to kafka topic twitter-topic
+2022-05-21 01:09:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1280935835789975553, "id": 1527818922262675456, "text": "RT @Sheraj99: Data Visualization of Single Cell-Identity. #BigData #Analytics #DataScience #AI #MachineLearning #IoT #IIoT #Python #RStats\u2026", "createdAt": 1653095391000}' to topic='twitter-topic'
+2022-05-21 01:09:56 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @gp_pulipaka: The Six #Python #MachineLearning Tools You Should Know. @kdnuggets #BigData #Analytics #DataScience #AI #IoT #IIoT #RStats? sending to kafka topic twitter-topic
+2022-05-21 01:09:56 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1371551211351121920, "id": 1527818925311934464, "text": "RT @gp_pulipaka: The Six #Python #MachineLearning Tools You Should Know. @kdnuggets #BigData #Analytics #DataScience #AI #IoT #IIoT #RStats\u2026", "createdAt": 1653095391000}' to topic='twitter-topic'
+2022-05-21 01:10:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text ?????:2? (????????)
+
+?5/24??15?OFF??????#06???????????????? [???????1]...(10:10)
+
+https://t.co/kExtpUessA sending to kafka topic twitter-topic
+2022-05-21 01:10:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1367656120739762185, "id": 1527818968320581632, "text": "?????:2? (????????)\n\n?5/24??15?OFF??????#06???????????????? [???????1]...(10:10)\n\nhttps://t.co/kExtpUessA", "createdAt": 1653095402000}' to topic='twitter-topic'
+2022-05-21 01:10:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text https://t.co/nkLPE5DKiw https://t.co/azLR7xHG5y 7roid?????#Android #?????? #????? ##Android sending to kafka topic twitter-topic
+2022-05-21 01:10:12 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 295992600, "id": 1527818993926475777, "text": "https://t.co/nkLPE5DKiw https://t.co/azLR7xHG5y 7roid?????#Android #?????? #????? ##Android", "createdAt": 1653095408000}' to topic='twitter-topic'
+2022-05-21 01:10:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text U.S. Marshals, who shot a man in Louisville today, are part of the DOJ. As my friend @LevinsonAriana says ?The ppl who are supposed to be investigating LMPD for engaging in misconduct are now killing ppl and being investigated by LMPD. It is honestly worse than a Kafka  novel.? sending to kafka topic twitter-topic
+2022-05-21 01:10:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 68457689, "id": 1527818998255128576, "text": "U.S. Marshals, who shot a man in Louisville today, are part of the DOJ. As my friend @LevinsonAriana says \u201CThe ppl who are supposed to be investigating LMPD for engaging in misconduct are now killing ppl and being investigated by LMPD. It is honestly worse than a Kafka  novel.\u201D", "createdAt": 1653095409000}' to topic='twitter-topic'
+2022-05-21 01:10:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text @BillLicata  Priceless response!  TY 4 sharing?? sending to kafka topic twitter-topic
+2022-05-21 01:10:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 42515105, "id": 1527818998410186754, "text": "@BillLicata  Priceless response!  TY 4 sharing??", "createdAt": 1653095409000}' to topic='twitter-topic'
+2022-05-21 01:10:17 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @GeologyTime: Here are Natural Moss Agate from Java Island, Indonesia.
+
+Photo: Fraska_dailyseller
+
+#minerals https://t.co/8JlpLq24Kz sending to kafka topic twitter-topic
+2022-05-21 01:10:17 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1926550459, "id": 1527819015087095808, "text": "RT @GeologyTime: Here are Natural Moss Agate from Java Island, Indonesia.\n\nPhoto: Fraska_dailyseller\n\n#minerals https://t.co/8JlpLq24Kz", "createdAt": 1653095413000}' to topic='twitter-topic'
+2022-05-21 01:10:21 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @pakrym: I?m looking for interview opportunities in Canada for my friend who fled Ukraine after the Russian invasion. She has a BS in CS? sending to kafka topic twitter-topic
+2022-05-21 01:10:21 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 14332451, "id": 1527819030136074240, "text": "RT @pakrym: I\u2019m looking for interview opportunities in Canada for my friend who fled Ukraine after the Russian invasion. She has a BS in CS\u2026", "createdAt": 1653095416000}' to topic='twitter-topic'
+2022-05-21 01:10:30 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @ramsatt: JavaScript Array
+#angular #html #javascript #css #programming #java #python #reactjs #webdevelopment #nodejs #php #webdevelope? sending to kafka topic twitter-topic
+2022-05-21 01:10:30 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1314164146934513665, "id": 1527819069436661762, "text": "RT @ramsatt: JavaScript Array\n#angular #html #javascript #css #programming #java #python #reactjs #webdevelopment #nodejs #php #webdevelope\u2026", "createdAt": 1653095426000}' to topic='twitter-topic'
+2022-05-21 01:10:33 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @gp_pulipaka: The Six #Python #MachineLearning Tools You Should Know. @kdnuggets #BigData #Analytics #DataScience #AI #IoT #IIoT #RStats? sending to kafka topic twitter-topic
+2022-05-21 01:10:33 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1288754505211883521, "id": 1527819080958464001, "text": "RT @gp_pulipaka: The Six #Python #MachineLearning Tools You Should Know. @kdnuggets #BigData #Analytics #DataScience #AI #IoT #IIoT #RStats\u2026", "createdAt": 1653095429000}' to topic='twitter-topic'
+2022-05-21 01:10:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @ramsatt: JavaScript Array
+#angular #html #javascript #css #programming #java #python #reactjs #webdevelopment #nodejs #php #webdevelope? sending to kafka topic twitter-topic
+2022-05-21 01:10:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1354047563280707586, "id": 1527819091276402690, "text": "RT @ramsatt: JavaScript Array\n#angular #html #javascript #css #programming #java #python #reactjs #webdevelopment #nodejs #php #webdevelope\u2026", "createdAt": 1653095431000}' to topic='twitter-topic'
+2022-05-21 01:10:37 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text @Fumiya_Kume ?????
+Java???????????? sending to kafka topic twitter-topic
+2022-05-21 01:10:37 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1117766672591441921, "id": 1527819097421258752, "text": "@Fumiya_Kume ?????\nJava???????????\u2026", "createdAt": 1653095432000}' to topic='twitter-topic'
+2022-05-21 01:10:38 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @thevivafrei: Justin Trudeau has turned Canada into a Kafka?esque nightmare. We now officially live in Kafkanada. #Kafkanada sending to kafka topic twitter-topic
+2022-05-21 01:10:38 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1518978372172337152, "id": 1527819101174870017, "text": "RT @thevivafrei: Justin Trudeau has turned Canada into a Kafka\u2019esque nightmare. We now officially live in Kafkanada. #Kafkanada", "createdAt": 1653095433000}' to topic='twitter-topic'
+2022-05-21 01:10:53 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @kariss_james: livraison en main propre ???
+snap: jameshop200
+telegram: critoma
+#Job #Java #Programming #Coding #100DaysofCode #DEVCommu? sending to kafka topic twitter-topic
+2022-05-21 01:10:53 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1299100964239085574, "id": 1527819165419159552, "text": "RT @kariss_james: livraison en main propre ???\nsnap: jameshop200\ntelegram: critoma\n#Job #Java #Programming #Coding #100DaysofCode #DEVCommu\u2026", "createdAt": 1653095449000}' to topic='twitter-topic'
+2022-05-21 01:10:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @Spalacios06: Torre Milenium:
+Inversi?n de $95 millones.
+125 metros de altura
+
+Aqu?l galeron costo m?s y parece java para platos. https:? sending to kafka topic twitter-topic
+2022-05-21 01:10:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1149723822238523392, "id": 1527819182607216640, "text": "RT @Spalacios06: Torre Milenium:\nInversi?n de $95 millones.\n125 metros de altura\n\nAqu?l galeron costo m?s y parece java para platos. https:\u2026", "createdAt": 1653095453000}' to topic='twitter-topic'
+2022-05-21 01:10:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text So this is what you java devs have been enjoying? Hm sending to kafka topic twitter-topic
+2022-05-21 01:10:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 216045254, "id": 1527819182649364485, "text": "So this is what you java devs have been enjoying? Hm", "createdAt": 1653095453000}' to topic='twitter-topic'
+2022-05-21 01:11:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @culturaliteral1: ?Supongo que me encantan mis cicatrices porque se han quedado conmigo m?s tiempo que la mayor?a de la gente.?? sending to kafka topic twitter-topic
+2022-05-21 01:11:04 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 2184740500, "id": 1527819209861914625, "text": "RT @culturaliteral1: \u201CSupongo que me encantan mis cicatrices porque se han quedado conmigo m?s tiempo que la mayor?a de la gente.\u201D\u2026", "createdAt": 1653095459000}' to topic='twitter-topic'
+2022-05-21 01:11:05 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text ?????:3? ???????????? (10:11)
+
+NP-FZ100
+
+??:-?
+
+https://t.co/riPZOO0Odx sending to kafka topic twitter-topic
+2022-05-21 01:11:05 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1371493492640256011, "id": 1527819217252147201, "text": "?????:3? ???????????? (10:11)\n\nNP-FZ100\n\n??:-?\n\nhttps://t.co/riPZOO0Odx", "createdAt": 1653095461000}' to topic='twitter-topic'
+2022-05-21 01:11:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @thevivafrei: Justin Trudeau has turned Canada into a Kafka?esque nightmare. We now officially live in Kafkanada. #Kafkanada sending to kafka topic twitter-topic
+2022-05-21 01:11:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 3265659361, "id": 1527819220704063488, "text": "RT @thevivafrei: Justin Trudeau has turned Canada into a Kafka\u2019esque nightmare. We now officially live in Kafkanada. #Kafkanada", "createdAt": 1653095462000}' to topic='twitter-topic'
+2022-05-21 01:11:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text @starbuxman @sergialmar @java @spring_io Sergi is an amazing individual sending to kafka topic twitter-topic
+2022-05-21 01:11:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 17662849, "id": 1527819222344032257, "text": "@starbuxman @sergialmar @java @spring_io Sergi is an amazing individual", "createdAt": 1653095462000}' to topic='twitter-topic'
+2022-05-21 01:11:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @gp_pulipaka: The Six #Python #MachineLearning Tools You Should Know. @kdnuggets #BigData #Analytics #DataScience #AI #IoT #IIoT #RStats? sending to kafka topic twitter-topic
+2022-05-21 01:11:13 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1276058041389953024, "id": 1527819249015787521, "text": "RT @gp_pulipaka: The Six #Python #MachineLearning Tools You Should Know. @kdnuggets #BigData #Analytics #DataScience #AI #IoT #IIoT #RStats\u2026", "createdAt": 1653095469000}' to topic='twitter-topic'
+2022-05-21 01:11:21 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Briptu Khairul Candra Tertembak Saat Menggerebek Bandar Narkoba, Begini?Kondisinya https://t.co/BiERDnQBSj sending to kafka topic twitter-topic
+2022-05-21 01:11:21 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1442122733886664704, "id": 1527819281005682689, "text": "Briptu Khairul Candra Tertembak Saat Menggerebek Bandar Narkoba, Begini?Kondisinya https://t.co/BiERDnQBSj", "createdAt": 1653095476000}' to topic='twitter-topic'
+2022-05-21 01:11:22 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @CornerHardMC: Have you ever wanted to convert Minecraft worlds between different versions, such as Java -> Bedrock, or prune worlds dow? sending to kafka topic twitter-topic
+2022-05-21 01:11:22 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1507238033606815747, "id": 1527819286605078540, "text": "RT @CornerHardMC: Have you ever wanted to convert Minecraft worlds between different versions, such as Java -> Bedrock, or prune worlds dow\u2026", "createdAt": 1653095478000}' to topic='twitter-topic'
+2022-05-21 01:11:38 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @SukDukDong1: Even de kosten verhalen op Willem Engel, Thierry Baudet, Gideon, Youri Plate, TikkieTinus, Rapper KAFKA, Michel Reijinga,? sending to kafka topic twitter-topic
+2022-05-21 01:11:38 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 377882157, "id": 1527819351679807488, "text": "RT @SukDukDong1: Even de kosten verhalen op Willem Engel, Thierry Baudet, Gideon, Youri Plate, TikkieTinus, Rapper KAFKA, Michel Reijinga,\u2026", "createdAt": 1653095493000}' to topic='twitter-topic'
+2022-05-21 01:11:44 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @dozle_official: ??????????????????16????5/21(?)??????????
+
+??????????????????
+?????????Java????
+https://t.co/TnZoZK2gaU
+
+???????????
+ht? sending to kafka topic twitter-topic
+2022-05-21 01:11:44 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 888365857331585025, "id": 1527819379530137600, "text": "RT @dozle_official: ??????????????????16????5/21(?)??????????\n\n???????????????\u200D??\n????????\u203BJava????\nhttps://t.co/TnZoZK2gaU\n\n???????????\nht\u2026", "createdAt": 1653095500000}' to topic='twitter-topic'
+2022-05-21 01:11:45 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @thevivafrei: Justin Trudeau has turned Canada into a Kafka?esque nightmare. We now officially live in Kafkanada. #Kafkanada sending to kafka topic twitter-topic
+2022-05-21 01:11:45 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1186623067, "id": 1527819381618753536, "text": "RT @thevivafrei: Justin Trudeau has turned Canada into a Kafka\u2019esque nightmare. We now officially live in Kafkanada. #Kafkanada", "createdAt": 1653095500000}' to topic='twitter-topic'
+2022-05-21 01:11:49 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Minecraft(Java????????)???????????
+????????????????????????????????V?????????????????
+?????????
+????????????????????????????????
+??????Discord?????
+
+#Minecraft sending to kafka topic twitter-topic
+2022-05-21 01:11:49 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1483000135915565058, "id": 1527819399088205825, "text": "Minecraft(Java????????)???????????\n????????????????????????????????V?????????????????\n?????????\n????????????????????????????????\n??????Discord?????\n\n#Minecraft", "createdAt": 1653095504000}' to topic='twitter-topic'
+2022-05-21 01:11:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @culturaliteral1: ?Supongo que me encantan mis cicatrices porque se han quedado conmigo m?s tiempo que la mayor?a de la gente.?? sending to kafka topic twitter-topic
+2022-05-21 01:11:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 849809402760712192, "id": 1527819413709283329, "text": "RT @culturaliteral1: \u201CSupongo que me encantan mis cicatrices porque se han quedado conmigo m?s tiempo que la mayor?a de la gente.\u201D\u2026", "createdAt": 1653095508000}' to topic='twitter-topic'
+2022-05-21 01:11:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @dozle_official: ??????????????????16????5/21(?)??????????
+
+??????????????????
+?????????Java????
+https://t.co/TnZoZK2gaU
+
+???????????
+ht? sending to kafka topic twitter-topic
+2022-05-21 01:11:55 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1428550757180088326, "id": 1527819426560884736, "text": "RT @dozle_official: ??????????????????16????5/21(?)??????????\n\n???????????????\u200D??\n????????\u203BJava????\nhttps://t.co/TnZoZK2gaU\n\n???????????\nht\u2026", "createdAt": 1653095511000}' to topic='twitter-topic'
+2022-05-21 01:11:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @errorf0k: Microsoft .NET Framework 4.8 instalador desatendido (32/64bits) https://t.co/77yGHkTiFS ?? #VisualBasic #Delphi #Pascal #Perl? sending to kafka topic twitter-topic
+2022-05-21 01:11:57 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1518733925673226249, "id": 1527819433531539456, "text": "RT @errorf0k: Microsoft .NET Framework 4.8 instalador desatendido (32/64bits) https://t.co/77yGHkTiFS ?? #VisualBasic #Delphi #Pascal #Perl\u2026", "createdAt": 1653095513000}' to topic='twitter-topic'
+2022-05-21 01:12:04 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2022-05-21 01:12:04 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2022-05-21 01:12:04 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2022-05-21 01:12:04 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2022-05-21 01:12:04 [SpringApplicationShutdownHook] INFO  c.m.d.t.t.k.s.r.i.TwitterStreamRunnerImpl - Closing twitter stream!
+2022-05-21 01:12:06 [SpringApplicationShutdownHook] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Closing kafka producer
+2022-05-21 01:13:00 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication v0.0.1-SNAPSHOT using Java 11.0.15 on b563c0f0f923 with PID 1 (/workspace/BOOT-INF/classes started by cnb in /workspace)
+2022-05-21 01:13:00 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-05-21 01:13:01 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [kafka-broker-1:9092, kafka-broker-2:9092, kafka-broker-3:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
