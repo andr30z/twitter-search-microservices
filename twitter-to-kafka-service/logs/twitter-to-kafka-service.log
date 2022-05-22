@@ -1,10 +1,513 @@
-2022-05-20 21:06:55 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.9 on DESKTOP-9T26SOC with PID 5920 (C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices\twitter-to-kafka-service\target\classes started by andre in C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices)
-2022-05-20 21:06:55 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2022-05-20 21:06:56 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterStreamRunnerImpl' defined in file [C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices\twitter-to-kafka-service\target\classes\com\microservices\demo\twitter\to\kafka\service\runner\impl\TwitterStreamRunnerImpl.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaStatusListener' defined in file [C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices\twitter-to-kafka-service\target\classes\com\microservices\demo\twitter\to\kafka\service\listener\TwitterKafkaStatusListener.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaProducerImpl' defined in file [C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices\kafka\kafka-producer\target\classes\com\microservices\demo\kafka\producer\config\service\impl\TwitterKafkaProducerImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kafkaTemplate' defined in class path resource [com/microservices/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservices/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is java.lang.NullPointerException
-2022-05-20 21:06:56 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+2022-05-21 15:34:14 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+No spring.config.import property has been defined
+
+Action:
+
+Add a spring.config.import=configserver: property to your configuration.
+	If configuration is not required add spring.config.import=optional:configserver: instead.
+	To disable this check, set spring.cloud.config.enabled=false or 
+	spring.cloud.config.import-check.enabled=false.
+
+2022-05-21 15:40:06 [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+2022-05-21 15:40:06 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-05-20 21:06:56 [main] ERROR o.s.boot.SpringApplication - Application run failed
+2022-05-21 15:40:06 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:164)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:297)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.buildLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:232)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.findLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:210)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(InitDestroyAnnotationBeanPostProcessor.java:149)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 30 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/context/properties/ConfigurationBeanFactoryMetadata
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3166)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2309)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467)
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 41 common frames omitted
+2022-05-21 15:40:06 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:164)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:297)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.buildLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:232)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.findLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:210)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(InitDestroyAnnotationBeanPostProcessor.java:149)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 30 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/context/properties/ConfigurationBeanFactoryMetadata
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3166)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2309)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467)
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 41 common frames omitted
+2022-05-21 15:48:40 [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+2022-05-21 15:48:40 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-05-21 15:48:40 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:164)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:297)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.buildLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:232)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.findLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:210)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(InitDestroyAnnotationBeanPostProcessor.java:149)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 30 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/context/properties/ConfigurationBeanFactoryMetadata
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3166)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2309)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467)
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 41 common frames omitted
+2022-05-21 15:48:40 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:164)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:297)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.buildLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:232)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.findLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:210)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(InitDestroyAnnotationBeanPostProcessor.java:149)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 30 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/context/properties/ConfigurationBeanFactoryMetadata
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3166)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2309)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467)
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 41 common frames omitted
+2022-05-21 15:50:46 [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+2022-05-21 15:50:46 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-05-21 15:50:46 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:164)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:297)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.buildLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:232)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.findLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:210)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(InitDestroyAnnotationBeanPostProcessor.java:149)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 30 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/context/properties/ConfigurationBeanFactoryMetadata
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3166)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2309)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467)
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 41 common frames omitted
+2022-05-21 15:50:46 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:164)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:297)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.buildLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:232)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.findLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:210)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(InitDestroyAnnotationBeanPostProcessor.java:149)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 30 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/context/properties/ConfigurationBeanFactoryMetadata
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3166)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2309)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467)
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 41 common frames omitted
+2022-05-21 15:54:05 [main] WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+2022-05-21 15:54:05 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-05-21 15:54:05 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:164)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:297)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.buildLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:232)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.findLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:210)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(InitDestroyAnnotationBeanPostProcessor.java:149)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 30 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/context/properties/ConfigurationBeanFactoryMetadata
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3166)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2309)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467)
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 41 common frames omitted
+2022-05-21 15:54:05 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configurationPropertiesBeans' defined in class path resource [org/springframework/cloud/autoconfigure/ConfigurationPropertiesRebinderAutoConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:164)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:297)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.cloud.context.properties.ConfigurationPropertiesBeans] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@77556fd]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.buildLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:232)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.findLifecycleMetadata(InitDestroyAnnotationBeanPostProcessor.java:210)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(InitDestroyAnnotationBeanPostProcessor.java:149)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:305)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 30 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/context/properties/ConfigurationBeanFactoryMetadata
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3166)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2309)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467)
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 41 common frames omitted
+2022-05-21 16:00:18 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+No spring.config.import property has been defined
+
+Action:
+
+Add a spring.config.import=configserver: property to your configuration.
+	If configuration is not required add spring.config.import=optional:configserver: instead.
+	To disable this check, set spring.cloud.config.enabled=false or 
+	spring.cloud.config.import-check.enabled=false.
+
+2022-05-21 16:01:11 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+No spring.config.import property has been defined
+
+Action:
+
+Add a spring.config.import=configserver: property to your configuration.
+	If configuration is not required add spring.config.import=optional:configserver: instead.
+	To disable this check, set spring.cloud.config.enabled=false or 
+	spring.cloud.config.import-check.enabled=false.
+
+2022-05-21 16:06:21 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.9 on DESKTOP-9T26SOC with PID 12388 (C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices\twitter-to-kafka-service\target\classes started by andre in C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices)
+2022-05-21 16:06:21 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-05-21 16:06:21 [main] INFO  o.s.b.c.config.ConfigDataLoader - Fetching config from server at : http://localhost:8888
+2022-05-21 16:06:21 [main] INFO  o.s.b.c.config.ConfigDataLoader - Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2022-05-21 16:06:21 [main] WARN  o.s.b.c.config.ConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@6b9c69a9 uris = array<String>['http://localhost:8888'], optional = true, profiles = list['default']]): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2022-05-21 16:06:22 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=35191b1e-9acb-3826-ad12-4a56258b381b
+2022-05-21 16:06:23 [main] WARN  o.s.b.w.r.c.AnnotationConfigReactiveWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterStreamRunnerImpl' defined in file [C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices\twitter-to-kafka-service\target\classes\com\microservices\demo\twitter\to\kafka\service\runner\impl\TwitterStreamRunnerImpl.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaStatusListener' defined in file [C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices\twitter-to-kafka-service\target\classes\com\microservices\demo\twitter\to\kafka\service\listener\TwitterKafkaStatusListener.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaProducerImpl' defined in file [C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices\kafka\kafka-producer\target\classes\com\microservices\demo\kafka\producer\config\service\impl\TwitterKafkaProducerImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kafkaTemplate' defined in class path resource [com/microservices/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservices/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is java.lang.NullPointerException
+2022-05-21 16:06:23 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-05-21 16:06:23 [main] ERROR o.s.boot.SpringApplication - Application run failed
 org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterToKafkaServiceApplication': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterStreamRunnerImpl' defined in file [C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices\twitter-to-kafka-service\target\classes\com\microservices\demo\twitter\to\kafka\service\runner\impl\TwitterStreamRunnerImpl.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaStatusListener' defined in file [C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices\twitter-to-kafka-service\target\classes\com\microservices\demo\twitter\to\kafka\service\listener\TwitterKafkaStatusListener.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'twitterKafkaProducerImpl' defined in file [C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices\kafka\kafka-producer\target\classes\com\microservices\demo\kafka\producer\config\service\impl\TwitterKafkaProducerImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kafkaTemplate' defined in class path resource [com/microservices/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.KafkaTemplate]: Factory method 'kafkaTemplate' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'producerFactory' defined in class path resource [com/microservices/demo/kafka/producer/config/KafkaProducerConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.kafka.core.ProducerFactory]: Factory method 'producerFactory' threw exception; nested exception is java.lang.NullPointerException
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
@@ -111,13 +614,13 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.resolveBeanReference(ConfigurationClassEnhancer.java:362)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:334)
-	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$c914dfcb.producerFactory(<generated>)
-	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig.kafkaTemplate(KafkaProducerConfig.java:62)
-	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$c914dfcb.CGLIB$kafkaTemplate$1(<generated>)
-	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$c914dfcb$$FastClassBySpringCGLIB$$e2edb923.invoke(<generated>)
+	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$c5b8e86d.producerFactory(<generated>)
+	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig.kafkaTemplate(KafkaProducerConfig.java:57)
+	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$c5b8e86d.CGLIB$kafkaTemplate$0(<generated>)
+	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$c5b8e86d$$FastClassBySpringCGLIB$$632a62d2.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
-	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$c914dfcb.kafkaTemplate(<generated>)
+	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$c5b8e86d.kafkaTemplate(<generated>)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -134,345 +637,15 @@ Caused by: java.lang.NullPointerException: null
 	at java.base/java.util.concurrent.ConcurrentHashMap.<init>(ConcurrentHashMap.java:852)
 	at org.springframework.kafka.core.DefaultKafkaProducerFactory.<init>(DefaultKafkaProducerFactory.java:205)
 	at org.springframework.kafka.core.DefaultKafkaProducerFactory.<init>(DefaultKafkaProducerFactory.java:168)
-	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig.producerFactory(KafkaProducerConfig.java:57)
-	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$c914dfcb.CGLIB$producerFactory$0(<generated>)
-	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$c914dfcb$$FastClassBySpringCGLIB$$e2edb923.invoke(<generated>)
+	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig.producerFactory(KafkaProducerConfig.java:52)
+	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$c5b8e86d.CGLIB$producerFactory$1(<generated>)
+	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$c5b8e86d$$FastClassBySpringCGLIB$$632a62d2.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
-	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$c914dfcb.producerFactory(<generated>)
+	at com.microservices.demo.kafka.producer.config.KafkaProducerConfig$$EnhancerBySpringCGLIB$$c5b8e86d.producerFactory(<generated>)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
 	... 100 common frames omitted
-2022-05-20 21:12:22 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.9 on DESKTOP-9T26SOC with PID 14356 (C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices\twitter-to-kafka-service\target\classes started by andre in C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices)
-2022-05-20 21:12:22 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2022-05-20 21:12:24 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
-	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
-	client.dns.lookup = use_all_dns_ips
-	client.id = 
-	connections.max.idle.ms = 300000
-	default.api.timeout.ms = 60000
-	metadata.max.age.ms = 300000
-	metric.reporters = []
-	metrics.num.samples = 2
-	metrics.recording.level = INFO
-	metrics.sample.window.ms = 30000
-	receive.buffer.bytes = 65536
-	reconnect.backoff.max.ms = 1000
-	reconnect.backoff.ms = 50
-	request.timeout.ms = 30000
-	retries = 2147483647
-	retry.backoff.ms = 100
-	sasl.client.callback.handler.class = null
-	sasl.jaas.config = null
-	sasl.kerberos.kinit.cmd = /usr/bin/kinit
-	sasl.kerberos.min.time.before.relogin = 60000
-	sasl.kerberos.service.name = null
-	sasl.kerberos.ticket.renew.jitter = 0.05
-	sasl.kerberos.ticket.renew.window.factor = 0.8
-	sasl.login.callback.handler.class = null
-	sasl.login.class = null
-	sasl.login.refresh.buffer.seconds = 300
-	sasl.login.refresh.min.period.seconds = 60
-	sasl.login.refresh.window.factor = 0.8
-	sasl.login.refresh.window.jitter = 0.05
-	sasl.mechanism = GSSAPI
-	security.protocol = PLAINTEXT
-	security.providers = null
-	send.buffer.bytes = 131072
-	socket.connection.setup.timeout.max.ms = 30000
-	socket.connection.setup.timeout.ms = 10000
-	ssl.cipher.suites = null
-	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
-	ssl.endpoint.identification.algorithm = https
-	ssl.engine.factory.class = null
-	ssl.key.password = null
-	ssl.keymanager.algorithm = SunX509
-	ssl.keystore.certificate.chain = null
-	ssl.keystore.key = null
-	ssl.keystore.location = null
-	ssl.keystore.password = null
-	ssl.keystore.type = JKS
-	ssl.protocol = TLSv1.3
-	ssl.provider = null
-	ssl.secure.random.implementation = null
-	ssl.trustmanager.algorithm = PKIX
-	ssl.truststore.certificates = null
-	ssl.truststore.location = null
-	ssl.truststore.password = null
-	ssl.truststore.type = JKS
-
-2022-05-20 21:12:24 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.0.1
-2022-05-20 21:12:24 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 8e30984f43e64d8b
-2022-05-20 21:12:24 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1653091944910
-2022-05-20 21:12:26 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080
-2022-05-20 21:12:26 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 3.729 seconds (JVM running for 4.479)
-2022-05-20 21:12:26 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts
-2022-05-20 21:12:26 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Creating 1 topic(s), attempt 0.
-2022-05-20 21:12:26 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
-2022-05-20 21:12:26 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (localhost/127.0.0.1:39092) could not be established. Broker may not be available.
-2022-05-20 21:12:29 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
-2022-05-20 21:12:31 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:19092) could not be established. Broker may not be available.
-2022-05-20 21:12:33 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (localhost/127.0.0.1:39092) could not be established. Broker may not be available.
-2022-05-20 21:12:35 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
-2022-05-20 21:12:37 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:19092) could not be established. Broker may not be available.
-2022-05-20 21:12:39 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (localhost/127.0.0.1:39092) could not be established. Broker may not be available.
-2022-05-20 21:12:41 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
-2022-05-20 21:12:43 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:19092) could not be established. Broker may not be available.
-2022-05-20 21:12:45 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (localhost/127.0.0.1:39092) could not be established. Broker may not be available.
-2022-05-20 21:12:47 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
-2022-05-20 21:12:49 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:19092) could not be established. Broker may not be available.
-2022-05-20 21:12:51 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (localhost/127.0.0.1:39092) could not be established. Broker may not be available.
-2022-05-20 21:12:53 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
-2022-05-20 21:12:54 [kafka-admin-client-thread | adminclient-1] INFO  o.a.k.c.a.i.AdminMetadataManager - [AdminClient clientId=adminclient-1] Metadata update failed
-org.apache.kafka.common.errors.TimeoutException: Timed out waiting to send the call. Call: fetchMetadata
-2022-05-20 21:12:55 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:19092) could not be established. Broker may not be available.
-2022-05-20 21:12:57 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (localhost/127.0.0.1:39092) could not be established. Broker may not be available.
-2022-05-20 21:12:59 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
-2022-05-20 21:13:01 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:19092) could not be established. Broker may not be available.
-2022-05-20 21:13:03 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (localhost/127.0.0.1:39092) could not be established. Broker may not be available.
-2022-05-20 21:13:05 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
-2022-05-20 21:13:07 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:19092) could not be established. Broker may not be available.
-2022-05-20 21:13:09 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (localhost/127.0.0.1:39092) could not be established. Broker may not be available.
-2022-05-20 21:13:11 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
-2022-05-20 21:13:13 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:19092) could not be established. Broker may not be available.
-2022-05-20 21:13:15 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (localhost/127.0.0.1:39092) could not be established. Broker may not be available.
-2022-05-20 21:13:17 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
-2022-05-20 21:13:19 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:19092) could not be established. Broker may not be available.
-2022-05-20 21:13:21 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (localhost/127.0.0.1:39092) could not be established. Broker may not be available.
-2022-05-20 21:13:23 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -2 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
-2022-05-20 21:13:24 [kafka-admin-client-thread | adminclient-1] INFO  o.a.k.c.a.i.AdminMetadataManager - [AdminClient clientId=adminclient-1] Metadata update failed
-org.apache.kafka.common.errors.TimeoutException: Timed out waiting to send the call. Call: fetchMetadata
-2022-05-20 21:13:25 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:19092) could not be established. Broker may not be available.
-2022-05-20 21:13:27 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 1
-2022-05-20 21:13:27 [kafka-admin-client-thread | adminclient-1] WARN  o.apache.kafka.clients.NetworkClient - [AdminClient clientId=adminclient-1] Connection to node -3 (localhost/127.0.0.1:39092) could not be established. Broker may not be available.
-2022-05-20 21:13:27 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
-2022-05-20 21:13:27 [kafka-admin-client-thread | adminclient-1] INFO  o.a.k.c.a.i.AdminMetadataManager - [AdminClient clientId=adminclient-1] Metadata update failed
-org.apache.kafka.common.errors.TimeoutException: The AdminClient thread has exited. Call: fetchMetadata
-2022-05-20 21:13:27 [kafka-admin-client-thread | adminclient-1] INFO  o.a.k.clients.admin.KafkaAdminClient - [AdminClient clientId=adminclient-1] Timed out 1 remaining operation(s) during close.
-2022-05-20 21:13:27 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
-2022-05-20 21:13:27 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2022-05-20 21:13:27 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
-2022-05-20 21:13:27 [SpringApplicationShutdownHook] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Closing kafka producer
-2022-05-20 21:13:29 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 2
-2022-05-20 21:13:29 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-05-20 21:13:29 [main] ERROR o.s.boot.SpringApplication - Application run failed
-java.lang.IllegalStateException: Failed to execute CommandLineRunner
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:780)
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:761)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
-	at com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.main(TwitterToKafkaServiceApplication.java:32)
-Caused by: com.microservices.demo.kafka.admin.exception.KafkaClientException: Reached max number of retry for reading kafka topic(s)!
-	at com.microservices.demo.kafka.admin.client.KafkaAdminClient.getTopics(KafkaAdminClient.java:81)
-	at com.microservices.demo.kafka.admin.client.KafkaAdminClient.checkTopicsCreated(KafkaAdminClient.java:99)
-	at com.microservices.demo.kafka.admin.client.KafkaAdminClient.createTopics(KafkaAdminClient.java:58)
-	at com.microservices.demo.twitter.to.kafka.service.init.KafkaStreamInitializerImpl.init(KafkaStreamInitializerImpl.java:26)
-	at com.microservices.demo.twitter.to.kafka.service.TwitterToKafkaServiceApplication.run(TwitterToKafkaServiceApplication.java:38)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:777)
-	... 5 common frames omitted
-Caused by: java.util.concurrent.ExecutionException: org.apache.kafka.common.errors.TimeoutException: The AdminClient thread is not accepting new calls.
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:395)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1999)
-	at org.apache.kafka.common.internals.KafkaFutureImpl.get(KafkaFutureImpl.java:165)
-	at com.microservices.demo.kafka.admin.client.KafkaAdminClient.doGetTopics(KafkaAdminClient.java:91)
-	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:329)
-	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:209)
-	at com.microservices.demo.kafka.admin.client.KafkaAdminClient.getTopics(KafkaAdminClient.java:79)
-	... 10 common frames omitted
-Caused by: org.apache.kafka.common.errors.TimeoutException: The AdminClient thread is not accepting new calls.
-2022-05-20 21:28:55 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.9 on DESKTOP-9T26SOC with PID 17072 (C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices\twitter-to-kafka-service\target\classes started by andre in C:\Users\Pichau\Documents\intellijProjects\twitter-search-microservices)
-2022-05-20 21:28:55 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2022-05-20 21:28:58 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
-	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
-	client.dns.lookup = use_all_dns_ips
-	client.id = 
-	connections.max.idle.ms = 300000
-	default.api.timeout.ms = 60000
-	metadata.max.age.ms = 300000
-	metric.reporters = []
-	metrics.num.samples = 2
-	metrics.recording.level = INFO
-	metrics.sample.window.ms = 30000
-	receive.buffer.bytes = 65536
-	reconnect.backoff.max.ms = 1000
-	reconnect.backoff.ms = 50
-	request.timeout.ms = 30000
-	retries = 2147483647
-	retry.backoff.ms = 100
-	sasl.client.callback.handler.class = null
-	sasl.jaas.config = null
-	sasl.kerberos.kinit.cmd = /usr/bin/kinit
-	sasl.kerberos.min.time.before.relogin = 60000
-	sasl.kerberos.service.name = null
-	sasl.kerberos.ticket.renew.jitter = 0.05
-	sasl.kerberos.ticket.renew.window.factor = 0.8
-	sasl.login.callback.handler.class = null
-	sasl.login.class = null
-	sasl.login.refresh.buffer.seconds = 300
-	sasl.login.refresh.min.period.seconds = 60
-	sasl.login.refresh.window.factor = 0.8
-	sasl.login.refresh.window.jitter = 0.05
-	sasl.mechanism = GSSAPI
-	security.protocol = PLAINTEXT
-	security.providers = null
-	send.buffer.bytes = 131072
-	socket.connection.setup.timeout.max.ms = 30000
-	socket.connection.setup.timeout.ms = 10000
-	ssl.cipher.suites = null
-	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
-	ssl.endpoint.identification.algorithm = https
-	ssl.engine.factory.class = null
-	ssl.key.password = null
-	ssl.keymanager.algorithm = SunX509
-	ssl.keystore.certificate.chain = null
-	ssl.keystore.key = null
-	ssl.keystore.location = null
-	ssl.keystore.password = null
-	ssl.keystore.type = JKS
-	ssl.protocol = TLSv1.3
-	ssl.provider = null
-	ssl.secure.random.implementation = null
-	ssl.trustmanager.algorithm = PKIX
-	ssl.truststore.certificates = null
-	ssl.truststore.location = null
-	ssl.truststore.password = null
-	ssl.truststore.type = JKS
-
-2022-05-20 21:28:59 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.0.1
-2022-05-20 21:28:59 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 8e30984f43e64d8b
-2022-05-20 21:28:59 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1653092939310
-2022-05-20 21:29:01 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080
-2022-05-20 21:29:01 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 9.508 seconds (JVM running for 17.628)
-2022-05-20 21:29:01 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App starts
-2022-05-20 21:29:01 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Creating 1 topic(s), attempt 0.
-2022-05-20 21:29:01 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic], attempt 0
-2022-05-20 21:29:01 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Topic with name twitter-topic.
-2022-05-20 21:29:01 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Topic with name _schemas.
-2022-05-20 21:29:01 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Topic with name __confluent.support.metrics.
-2022-05-20 21:29:04 [main] INFO  c.m.d.t.t.k.s.i.KafkaStreamInitializerImpl - Topic with name twitter-topic is ready for operations!
-2022-05-20 21:29:04 [main] INFO  c.m.d.t.t.k.s.r.i.TwitterStreamRunnerImpl - Started filtering twitter stream for keywords [Java, Microservices, Kafka, Elasticsearch]
-2022-05-20 21:29:04 [Twitter Stream consumer /  [1][initializing]] INFO  twitter4j.TwitterStreamImpl - Establishing connection.
-2022-05-20 21:29:16 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Connection established.
-2022-05-20 21:29:16 [Twitter Stream consumer /  [1][Establishing connection]] INFO  twitter4j.TwitterStreamImpl - Receiving status stream.
-2022-05-20 21:29:16 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @AdhiSquarePants: Create a Drum Machine with Python and Pygame
-
-https://t.co/k0Nermv9AC
-
-#Python #DataScientist #BigData #Analytics #Dat… sending to kafka topic twitter-topic
-2022-05-20 21:29:16 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1340874842384592896, "id": 1527808691457646593, "text": "RT @AdhiSquarePants: Create a Drum Machine with Python and Pygame\n\nhttps://t.co/k0Nermv9AC\n\n#Python #DataScientist #BigData #Analytics #Dat\u2026", "createdAt": 1653092952000}' to topic='twitter-topic'
-2022-05-20 21:29:23 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text @ItakageKuon おはようございます(*'ω'*)
-ものすごい興味あるんですけど、JAVA版と統合版、どちらになりますか？
-統合版なら参加したいです！ sending to kafka topic twitter-topic
-2022-05-20 21:29:23 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1453633647781679106, "id": 1527808720519843840, "text": "@ItakageKuon おはようございます(*'ω'*)\nものすごい興味あるんですけど、JAVA版と統合版、どちらになりますか？\n統合版なら参加したいです！", "createdAt": 1653092958000}' to topic='twitter-topic'
-2022-05-20 21:29:26 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @GeologyTime: Here are Natural Moss Agate from Java Island, Indonesia.
-
-Photo: Fraska_dailyseller
-
-#minerals https://t.co/8JlpLq24Kz sending to kafka topic twitter-topic
-2022-05-20 21:29:26 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 2669096004, "id": 1527808731307724800, "text": "RT @GeologyTime: Here are Natural Moss Agate from Java Island, Indonesia.\n\nPhoto: Fraska_dailyseller\n\n#minerals https://t.co/8JlpLq24Kz", "createdAt": 1653092961000}' to topic='twitter-topic'
-2022-05-20 21:29:28 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @reddseyirdefter: televizyonda başkan cart curt, radyo açık, ağlak zart zurt. kafa kafka oldu… sending to kafka topic twitter-topic
-2022-05-20 21:29:28 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 2532928720, "id": 1527808739725783041, "text": "RT @reddseyirdefter: televizyonda başkan cart curt, radyo açık, ağlak zart zurt. kafa kafka oldu\u2026", "createdAt": 1653092963000}' to topic='twitter-topic'
-2022-05-20 21:29:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text My two favorite books I’ve read this year are Mother Night and my current read, Kafka on the Shore. I have 10 chapters left. What should I read after this? sending to kafka topic twitter-topic
-2022-05-20 21:29:35 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 114639779, "id": 1527808769983500288, "text": "My two favorite books I\u2019ve read this year are Mother Night and my current read, Kafka on the Shore. I have 10 chapters left. What should I read after this?", "createdAt": 1653092970000}' to topic='twitter-topic'
-2022-05-20 21:29:38 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text https://t.co/rRdBpxYpsv sending to kafka topic twitter-topic
-2022-05-20 21:29:38 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 894966796142485504, "id": 1527808783581384705, "text": "https://t.co/rRdBpxYpsv", "createdAt": 1653092973000}' to topic='twitter-topic'
-2022-05-20 21:29:43 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Unable to remotely connect to JMX? https://t.co/vPCVWiECGy #java #jmx https://t.co/SaWgnQK9lg sending to kafka topic twitter-topic
-2022-05-20 21:29:43 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1098709061334429696, "id": 1527808805228224512, "text": "Unable to remotely connect to JMX? https://t.co/vPCVWiECGy #java #jmx https://t.co/SaWgnQK9lg", "createdAt": 1653092979000}' to topic='twitter-topic'
-2022-05-20 21:29:44 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text PictureThis - Identifique suas plantas instantaneamente.
-https://t.co/mgBv4IPXmW sending to kafka topic twitter-topic
-2022-05-20 21:29:44 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1458285859, "id": 1527808807618895872, "text": "PictureThis - Identifique suas plantas instantaneamente.\nhttps://t.co/mgBv4IPXmW", "createdAt": 1653092979000}' to topic='twitter-topic'
-2022-05-20 21:29:51 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @ShadyWordPress: This Is What Happens When 
-         Bad Beats Evil 
-                 The Sequel
-#trendingkiiara #AssassinsCreed @KIIARA… sending to kafka topic twitter-topic
-2022-05-20 21:29:51 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1392337296997851139, "id": 1527808839890141184, "text": "RT @ShadyWordPress: This Is What Happens When \n         Bad Beats Evil \n                 The Sequel\n#trendingkiiara #AssassinsCreed @KIIARA\u2026", "createdAt": 1653092987000}' to topic='twitter-topic'
-2022-05-20 21:30:05 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text The latest update for #Elastic includes "How Elastic powers speed, security, and connectivity in capital markets" and "How can #observability help telecom providers accelerate 5G monetization".
- 
-#Logging #Elasticsearch #DevOps https://t.co/a3LSfqvkSp sending to kafka topic twitter-topic
-2022-05-20 21:30:05 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 973203003275608064, "id": 1527808897729323009, "text": "The latest update for #Elastic includes \"How Elastic powers speed, security, and connectivity in capital markets\" and \"How can #observability help telecom providers accelerate 5G monetization\".\n \n#Logging #Elasticsearch #DevOps https://t.co/a3LSfqvkSp", "createdAt": 1653093001000}' to topic='twitter-topic'
-2022-05-20 21:30:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text NICE is looking for: Java pipeline
-https://t.co/bGDa0VEkUf #job sending to kafka topic twitter-topic
-2022-05-20 21:30:06 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 287210786, "id": 1527808902338908160, "text": "NICE is looking for: Java pipeline\nhttps://t.co/bGDa0VEkUf #job", "createdAt": 1653093002000}' to topic='twitter-topic'
-2022-05-20 21:30:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @CornerHardMC: Have you ever wanted to convert Minecraft worlds between different versions, such as Java -> Bedrock, or prune worlds dow… sending to kafka topic twitter-topic
-2022-05-20 21:30:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1270545528, "id": 1527808903672696834, "text": "RT @CornerHardMC: Have you ever wanted to convert Minecraft worlds between different versions, such as Java -> Bedrock, or prune worlds dow\u2026", "createdAt": 1653093002000}' to topic='twitter-topic'
-2022-05-20 21:30:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text ランキング:18位 (楽器、手芸、コレクション)
-
-超改良【大容量UV-LEDレジン液】70g まさるの涙 サラサラタイプ《クリア》 低粘度 さら......(09:30)
-
-https://t.co/KPBQTVbdeC sending to kafka topic twitter-topic
-2022-05-20 21:30:07 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1367656120739762185, "id": 1527808907355488256, "text": "ランキング:18位 (楽器、手芸、コレクション)\n\n超改良【大容量UV-LEDレジン液】70g まさるの涙 サラサラタイプ《クリア》 低粘度 さら......(09:30)\n\nhttps://t.co/KPBQTVbdeC", "createdAt": 1653093003000}' to topic='twitter-topic'
-2022-05-20 21:30:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text ❗ランキング:13位❗ (ナイト＆週末セール)
-
-「MXシリーズ 6ドア冷蔵庫572L 真ん中野菜室 クリスタルホワイト（フレンチドア）【大型商品（設置工事可）】 MR-MX57G-W」
-メーカ:三菱電機
-
-価格:¥198,000(09:30)
-
-https://t.co/iKDJwwMK8Z sending to kafka topic twitter-topic
-2022-05-20 21:30:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1358806251077922816, "id": 1527808907548426240, "text": "❗ランキング:13位❗ (ナイト＆週末セール)\n\n「MXシリーズ 6ドア冷蔵庫572L 真ん中野菜室 クリスタルホワイト（フレンチドア）【大型商品（設置工事可）】 MR-MX57G-W」\nメーカ:三菱電機\n\n価格:¥198,000(09:30)\n\nhttps://t.co/iKDJwwMK8Z", "createdAt": 1653093003000}' to topic='twitter-topic'
-2022-05-20 21:30:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text HEY can I request a ptwt mc server that has Java and bedrock access? that would be poggers >:] sending to kafka topic twitter-topic
-2022-05-20 21:30:08 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1461466751355568131, "id": 1527808911436304385, "text": "HEY can I request a ptwt mc server that has Java and bedrock access? that would be poggers >:]", "createdAt": 1653093004000}' to topic='twitter-topic'
-2022-05-20 21:30:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Java Developer - Immediate Joiner  Harjai Computers Pvt Ltd 5-10 years https://t.co/4whDuSCDTI sending to kafka topic twitter-topic
-2022-05-20 21:30:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 26956474, "id": 1527808912937738240, "text": "Java Developer - Immediate Joiner  Harjai Computers Pvt Ltd 5-10 years https://t.co/4whDuSCDTI", "createdAt": 1653093004000}' to topic='twitter-topic'
-2022-05-20 21:30:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text ❗ランキング：13位❗(電源パーツ)
-
-「HEXA 85+ 650W /  80 PLUS BRONZE認証 /  650W 電源 HA650」
-メーカ:FSP
-
-価格:¥6,640✨
-🔥売り切れ間近🔥(09:30)
-
-https://t.co/0RifOLxw9M sending to kafka topic twitter-topic
-2022-05-20 21:30:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1375961552122044417, "id": 1527808914078994432, "text": "❗ランキング：13位❗(電源パーツ)\n\n「HEXA 85+ 650W /  80 PLUS BRONZE認証 /  650W 電源 HA650」\nメーカ:FSP\n\n価格:¥6,640✨\n🔥売り切れ間近🔥(09:30)\n\nhttps://t.co/0RifOLxw9M", "createdAt": 1653093005000}' to topic='twitter-topic'
-2022-05-20 21:30:10 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Atlet Dayung Asal Sultra Bikin Bangga, Sofyanto Sumbang Emas di SEA Games 2021 Vietnam https://t.co/NZIXhpu3Ch sending to kafka topic twitter-topic
-2022-05-20 21:30:10 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1442122733886664704, "id": 1527808919875334145, "text": "Atlet Dayung Asal Sultra Bikin Bangga, Sofyanto Sumbang Emas di SEA Games 2021 Vietnam https://t.co/NZIXhpu3Ch", "createdAt": 1653093006000}' to topic='twitter-topic'
-2022-05-20 21:30:11 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @Cameron_Dennis_: NEAR’s new Java Script SDK is how we onboard a million developers into web 3 and I’m sooo here for it 🚀 sending to kafka topic twitter-topic
-2022-05-20 21:30:11 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1013427313, "id": 1527808920361869314, "text": "RT @Cameron_Dennis_: NEAR\u2019s new Java Script SDK is how we onboard a million developers into web 3 and I\u2019m sooo here for it 🚀", "createdAt": 1653093006000}' to topic='twitter-topic'
-2022-05-20 21:30:23 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Introduction to Web Scraping With Java https://t.co/Oh2Sy8Vgw1 sending to kafka topic twitter-topic
-2022-05-20 21:30:23 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1375790973314289667, "id": 1527808973520396289, "text": "Introduction to Web Scraping With Java https://t.co/Oh2Sy8Vgw1", "createdAt": 1653093019000}' to topic='twitter-topic'
-2022-05-20 21:30:47 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text @MojangStatus @MojangSupport yeah uhm i cant connect to any realm and have tried on all devices (computers). it says java connection reset every time and ive changed my modem and have done literally almost everything. please help me sending to kafka topic twitter-topic
-2022-05-20 21:30:47 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1524444010747625472, "id": 1527809071272759296, "text": "@MojangStatus @MojangSupport yeah uhm i cant connect to any realm and have tried on all devices (computers). it says java connection reset every time and ive changed my modem and have done literally almost everything. please help me", "createdAt": 1653093042000}' to topic='twitter-topic'
-2022-05-20 21:30:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text クラスメソッド
-https://t.co/h8QN7ka8oc sending to kafka topic twitter-topic
-2022-05-20 21:30:52 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1246977906233892865, "id": 1527809093855223808, "text": "クラスメソッド\nhttps://t.co/h8QN7ka8oc", "createdAt": 1653093047000}' to topic='twitter-topic'
-2022-05-20 21:30:59 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @opsmatters_uk: The latest update for #Elastic includes "How Elastic powers speed, security, and connectivity in capital markets" and "H… sending to kafka topic twitter-topic
-2022-05-20 21:30:59 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1148832517966798849, "id": 1527809123445657600, "text": "RT @opsmatters_uk: The latest update for #Elastic includes \"How Elastic powers speed, security, and connectivity in capital markets\" and \"H\u2026", "createdAt": 1653093055000}' to topic='twitter-topic'
-2022-05-20 21:31:00 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @thevivafrei: Justin Trudeau has turned Canada into a Kafka’esque nightmare. We now officially live in Kafkanada. #Kafkanada sending to kafka topic twitter-topic
-2022-05-20 21:31:00 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 34334773, "id": 1527809128512512001, "text": "RT @thevivafrei: Justin Trudeau has turned Canada into a Kafka\u2019esque nightmare. We now officially live in Kafkanada. #Kafkanada", "createdAt": 1653093056000}' to topic='twitter-topic'
-2022-05-20 21:31:05 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text So, uh, you know that log4j vulnerability that allows a malicious actor to perform arbitrary code execution as long as they're able to log a message using a particular version of a Java library.
-
-This attack vector is going to be around forever unless we block JNDI lookups.
-
-1/2 sending to kafka topic twitter-topic
-2022-05-20 21:31:05 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 942161577406554112, "id": 1527809150100639744, "text": "So, uh, you know that log4j vulnerability that allows a malicious actor to perform arbitrary code execution as long as they're able to log a message using a particular version of a Java library.\n\nThis attack vector is going to be around forever unless we block JNDI lookups.\n\n1/2", "createdAt": 1653093061000}' to topic='twitter-topic'
-2022-05-20 21:31:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @artemisinfurs: when franz kafka wrote "i’m tired, can’t think of a thing, and my sole wish is to lay my head in your lap, feel your han… sending to kafka topic twitter-topic
-2022-05-20 21:31:09 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1283693262973407233, "id": 1527809164201934848, "text": "RT @artemisinfurs: when franz kafka wrote \"i\u2019m tired, can\u2019t think of a thing, and my sole wish is to lay my head in your lap, feel your han\u2026", "createdAt": 1653093064000}' to topic='twitter-topic'
-2022-05-20 21:31:11 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @pufalayam: @juliaioffe It reminds me of that Kafka quote about 'The Evil One' & not believing in him as his trick
-
-but with this:
-the f… sending to kafka topic twitter-topic
-2022-05-20 21:31:11 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 182569676, "id": 1527809173018140674, "text": "RT @pufalayam: @juliaioffe It reminds me of that Kafka quote about 'The Evil One' & not believing in him as his trick\n\nbut with this:\nthe f\u2026", "createdAt": 1653093066000}' to topic='twitter-topic'
-2022-05-20 21:31:19 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @culturaliteral1: “Supongo que me encantan mis cicatrices porque se han quedado conmigo más tiempo que la mayoría de la gente.”… sending to kafka topic twitter-topic
-2022-05-20 21:31:19 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1340195685384204289, "id": 1527809207025770496, "text": "RT @culturaliteral1: \u201CSupongo que me encantan mis cicatrices porque se han quedado conmigo más tiempo que la mayoría de la gente.\u201D\u2026", "createdAt": 1653093074000}' to topic='twitter-topic'
-2022-05-20 21:31:41 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @ShadyWordPress: This Is What Happens When 
-         Bad Beats Evil 
-                 The Sequel
-#trendingkiiara #AssassinsCreed @KIIARA… sending to kafka topic twitter-topic
-2022-05-20 21:31:41 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1246333516717031424, "id": 1527809298004430848, "text": "RT @ShadyWordPress: This Is What Happens When \n         Bad Beats Evil \n                 The Sequel\n#trendingkiiara #AssassinsCreed @KIIARA\u2026", "createdAt": 1653093096000}' to topic='twitter-topic'
-2022-05-20 21:31:42 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @ShadyWordPress: This Is What Happens When 
-         Bad Beats Evil 
-                 The Sequel
-#trendingkiiara #AssassinsCreed @KIIARA… sending to kafka topic twitter-topic
-2022-05-20 21:31:42 [Twitter4J Async Dispatcher[0]] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Sending message='{"userId": 1127829883013361665, "id": 1527809303624790016, "text": "RT @ShadyWordPress: This Is What Happens When \n         Bad Beats Evil \n                 The Sequel\n#trendingkiiara #AssassinsCreed @KIIARA\u2026", "createdAt": 1653093097000}' to topic='twitter-topic'
-2022-05-20 21:31:45 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
-2022-05-20 21:31:45 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
-2022-05-20 21:31:45 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2022-05-20 21:31:45 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
-2022-05-20 21:31:45 [SpringApplicationShutdownHook] INFO  c.m.d.t.t.k.s.r.i.TwitterStreamRunnerImpl - Closing twitter stream!
-2022-05-20 21:31:47 [SpringApplicationShutdownHook] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducerImpl - Closing kafka producer
